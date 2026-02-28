@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "titulo": "IA Misionera: El algoritmo que detecta jaguares en tiempo real",
+    "resumen": "Desarrolladores locales presentan un sistema de cámaras inteligentes para la Reserva de Biosfera Yabotí.",
+    "imagen": "https://images.unsplash.com/photo-1518131341381-86088f343834?auto=format&fit=crop&w=800&q=80",
+    "categoria": "Innovación",
+    "destacada": true
+  },
+  {
+    "id": 2,
+    "titulo": "Récord de exportación de Yerba Mate",
+    "resumen": "Las cooperativas de la zona centro reportan el mejor cuatrimestre de la década.",
+    "imagen": "https://images.unsplash.com/photo-1590608897129-79da98d15969?auto=format&fit=crop&w=600&q=80",
+    "categoria": "Economía",
+    "destacada": false
+  },
+  {
+    "id": 3,
+    "titulo": "Gran final del Torneo de Futsal en Posadas",
+    "resumen": "El polideportivo Finito Gehrmann será sede de la final este domingo.",
+    "imagen": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=600&q=80",
+    "categoria": "Deportes",
+    "destacada": false
+  }
+]
