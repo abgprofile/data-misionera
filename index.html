@@ -6,26 +6,23 @@
     <title>Data Misionera | El diario de la selva</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: #0a0a0a;
-        }
-        .neon-border {
-            border: 1px solid #39FF14;
-            box-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
-        }
-        .neon-text {
-            color: #39FF14;
-            text-shadow: 0 0 5px rgba(57, 255, 20, 0.5);
-        }
-        .green-gradient {
-            background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(10,30,10,0.9) 100%);
-        }
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #0a0a0a; }
+        .neon-border { border: 1px solid #39FF14; box-shadow: 0 0 10px rgba(57, 255, 20, 0.2); }
+        .neon-text { color: #39FF14; text-shadow: 0 0 5px rgba(57, 255, 20, 0.5); }
+        .green-gradient { background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(10,30,10,0.9) 100%); }
     </style>
 </head>
 <body class="text-gray-300">
 
-    <header class="py-8 border-b border-gray-800 bg-black">
+    <header class="py-8 border-b border-gray-800 bg-black relative">
+        <div id="weather-widget" class="absolute top-4 right-4 text-right hidden md:block">
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Posadas, Misiones</p>
+            <div class="flex items-center justify-end">
+                <span id="temp" class="text-2xl font-black neon-text">--°C</span>
+            </div>
+            <p id="weather-desc" class="text-[10px] text-green-700 uppercase font-bold">Cargando clima...</p>
+        </div>
+
         <div class="container mx-auto px-4 flex flex-col items-center">
             <div class="mb-4">
                 <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,86 +34,70 @@
                     <ellipse cx="60" cy="25" rx="7" ry="9" fill="#39FF14" transform="rotate(10 60 25)"/>
                 </svg>
             </div>
-            <h1 class="text-6xl font-black tracking-tighter neon-text uppercase text-center">Data Misionera</h1>
-            <p class="text-xs tracking-[0.3em] mt-2 text-gray-500 font-bold uppercase">Sábado, 28 de Febrero de 2026</p>
+            <h1 class="text-6xl font-black tracking-tighter neon-text uppercase text-center leading-none">Data Misionera</h1>
+            <p class="text-xs tracking-[0.3em] mt-3 text-gray-500 font-bold uppercase">Sábado, 28 de Febrero de 2026</p>
         </div>
     </header>
 
     <nav class="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-gray-800">
-        <div class="container mx-auto">
-            <ul class="flex justify-center space-x-8 py-4 text-xs font-bold uppercase tracking-widest">
-                <li class="border-b-2 border-green-500"><a href="#" class="text-white">Política</a></li>
-                <li><a href="#" class="hover:text-green-400 transition">Economía</a></li>
-                <li><a href="#" class="hover:text-green-400 transition">Mundo</a></li>
-                <li><a href="#" class="hover:text-green-400 transition">Tecnología</a></li>
-                <li><a href="#" class="hover:text-green-400 transition">Deportes</a></li>
+        <div class="container mx-auto px-4">
+            <ul class="flex justify-center space-x-6 md:space-x-12 py-4 text-[10px] md:text-xs font-bold uppercase tracking-widest">
+                <li class="border-b-2 border-green-500 text-white"><a href="#">Noticias</a></li>
+                <li><a href="#" class="hover:text-green-400 transition">Selva</a></li>
+                <li><a href="#" class="hover:text-green-400 transition">Innovación</a></li>
+                <li><a href="#" class="hover:text-green-400 transition">Turismo</a></li>
             </ul>
         </div>
     </nav>
 
-    <main class="container mx-auto mt-10 px-4">
+    <main class="container mx-auto mt-10 px-4 pb-20">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            
-            <div class="lg:col-span-2 space-y-10">
+            <div class="lg:col-span-2">
                 <article class="relative group cursor-pointer overflow-hidden rounded-xl border border-gray-800 hover:border-green-500 transition duration-500">
                     <div class="absolute inset-0 green-gradient z-10"></div>
-                    <img src="https://images.unsplash.com/photo-1518131341381-86088f343834?auto=format&fit=crop&w=1200&q=80" alt="Selva" class="w-full h-[500px] object-cover group-hover:scale-105 transition duration-700">
+                    <img src="https://images.unsplash.com/photo-1518131341381-86088f343834?auto=format&fit=crop&w=1200&q=80" class="w-full h-[500px] object-cover">
                     <div class="absolute bottom-0 p-8 z-20">
-                        <span class="bg-green-600 text-black px-3 py-1 text-xs font-black uppercase mb-4 inline-block">Hero Section</span>
-                        <h2 class="text-5xl font-black text-white leading-tight uppercase tracking-tighter mb-4">La Inteligencia Artificial revoluciona la Selva Misionera</h2>
-                        <p class="text-gray-300 max-w-xl">Nuevos algoritmos permiten monitorear la biodiversidad en tiempo real, protegiendo al Yaguareté con tecnología de punta.</p>
+                        <span class="bg-green-600 text-black px-3 py-1 text-[10px] font-black uppercase mb-4 inline-block">Impacto Ambiental</span>
+                        <h2 class="text-5xl font-black text-white leading-tight uppercase tracking-tighter">La IA protege el corredor verde misionero</h2>
                     </div>
                 </article>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <article class="bg-zinc-900 p-4 border border-zinc-800 rounded-lg">
-                        <img src="https://images.unsplash.com/photo-1444491741275-3747c53c99b4?auto=format&fit=crop&w=600&q=80" class="rounded mb-4 opacity-80 hover:opacity-100 transition">
-                        <h3 class="text-xl font-bold text-white mb-2">Presupuesto 2026: Impulso a la innovación local.</h3>
-                        <p class="text-sm text-gray-400">El gobierno provincial anuncia fondos para startups sustentables.</p>
-                    </article>
-                    <article class="bg-zinc-900 p-4 border border-zinc-800 rounded-lg">
-                        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80" class="rounded mb-4 opacity-80 hover:opacity-100 transition">
-                        <h3 class="text-xl font-bold text-white mb-2">Turismo aventura crece un 40% este verano.</h3>
-                        <p class="text-sm text-gray-400">Los Saltos del Moconá registran visitas récord durante febrero.</p>
-                    </article>
-                </div>
             </div>
 
-            <aside>
+            <aside class="space-y-6">
                 <div class="neon-border p-6 rounded-xl bg-black">
-                    <h3 class="text-2xl font-black neon-text italic uppercase mb-8 border-b border-green-900 pb-2">Lo más leído</h3>
-                    <ul class="space-y-8">
-                        <li class="flex gap-4">
-                            <span class="text-4xl font-black text-zinc-800">01.</span>
-                            <div>
-                                <a href="#" class="text-white font-bold hover:text-green-400 transition leading-tight block">La tecnología de vanguardia llega a los colegios de Misiones.</a>
-                                <p class="text-xs text-gray-500 mt-1 uppercase">Sociedad</p>
-                            </div>
+                    <h3 class="text-xl font-black neon-text uppercase mb-6 border-b border-green-900 pb-2">Tendencias</h3>
+                    <ul class="space-y-6">
+                        <li class="group">
+                            <span class="text-xs text-green-800 font-bold">01</span>
+                            <a href="#" class="block text-white font-bold group-hover:text-green-400 transition uppercase tracking-tight">Silicon Misiones expande su campus tecnológico.</a>
                         </li>
-                        <li class="flex gap-4 border-t border-zinc-800 pt-6">
-                            <span class="text-4xl font-black text-zinc-800">02.</span>
-                            <div>
-                                <a href="#" class="text-white font-bold hover:text-green-400 transition leading-tight block">Clima: Alerta por tormentas en la zona norte.</a>
-                                <p class="text-xs text-gray-500 mt-1 uppercase">Servicios</p>
-                            </div>
-                        </li>
-                        <li class="flex gap-4 border-t border-zinc-800 pt-6">
-                            <span class="text-4xl font-black text-zinc-800">03.</span>
-                            <div>
-                                <a href="#" class="text-white font-bold hover:text-green-400 transition leading-tight block">Exportaciones de Yerba Mate alcanzan cifras históricas.</a>
-                                <p class="text-xs text-gray-500 mt-1 uppercase">Economía</p>
-                            </div>
+                        <li class="group border-t border-zinc-800 pt-4">
+                            <span class="text-xs text-green-800 font-bold">02</span>
+                            <a href="#" class="block text-white font-bold group-hover:text-green-400 transition uppercase tracking-tight">Nuevos avistamientos de fauna en Iguazú.</a>
                         </li>
                     </ul>
                 </div>
             </aside>
-
         </div>
     </main>
 
-    <footer class="mt-20 py-10 border-t border-zinc-800 text-center text-gray-600 text-xs tracking-widest uppercase">
-        &copy; 2026 Data Misionera - Hecho en la Selva.
-    </footer>
+    <script>
+        async function fetchWeather() {
+            try {
+                // Coordenadas de Posadas, Misiones
+                const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=-27.3671&longitude=-55.8961&current_weather=true');
+                const data = await response.json();
+                const temp = Math.round(data.current_weather.temperature);
+                
+                document.getElementById('temp').innerText = `${temp}°C`;
+                document.getElementById('weather-desc').innerText = 'Cielo Despejado'; 
+                document.getElementById('weather-widget').classList.remove('hidden');
+            } catch (error) {
+                console.error("Error al cargar el clima", error);
+            }
+        }
+        fetchWeather();
+    </script>
 
 </body>
 </html>
