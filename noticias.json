@@ -23,4 +23,13 @@
     "categoria": "Deportes",
     "destacada": false
   }
+  },
+  {
+    "id": 3,
+    "titulo": "Fifa 2027 saldra en octubre de este año",
+    "resumen": "Sorpresa en el mercado gamer, se anuncio la vuelta de la tan reconocida saga FIFA",
+    "imagen": "https://southjets.com/wp-content/uploads/2025/08/banner-para-blogs-5-1536x864.png",
+    "categoria": "Deportes",
+    "destacada": false
+  }
 ]
